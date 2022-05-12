@@ -1,0 +1,24 @@
+# this is a ingress controller service as a LB service
+# This acts as a reverse proxy for prod and canary version of application.
+# More info - https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/
+apiVersion: v1
+kind: Service
+metadata:
+  name: ingress-nginx
+  namespace: ingress-nginx
+  labels:
+    app.kubernetes.io/name: ingress-nginx
+    app.kubernetes.io/part-of: ingress-nginx
+spec:
+  type: LoadBalancer
+  selector:
+    app.kubernetes.io/name: ingress-nginx
+    app.kubernetes.io/part-of: ingress-nginx
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+    - name: https
+      port: 443
+      targetPort: https
+
