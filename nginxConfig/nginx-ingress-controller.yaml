@@ -235,7 +235,7 @@ spec:
         kubernetes.io/os: linux
       containers:
         - name: nginx-ingress-controller
-          image: us-phoenix-1.ocir.io/ax022wvgmjpq/vshantha/nginx-ingress-controller:0.30.0
+          image: us-phoenix-1.ocir.io/ax022wvgmjpq/vshantha/nginx-ingress-controller:0.0
           args:
             - /nginx-ingress-controller # this is where the ingress controller application is stored
             - --configmap=$(POD_NAMESPACE)/nginx-configuration
