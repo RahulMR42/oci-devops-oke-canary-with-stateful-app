@@ -31,4 +31,4 @@ spec:
     spec:
       containers:
       - name: redis
-        image: iad.ocir.io/ax022wvgmjpq/oke-canary-poc/redis:v1
+        image: us-ashburn-1.ocir.io/fahdabidiroottenancy/mr-redis:6.0.5
