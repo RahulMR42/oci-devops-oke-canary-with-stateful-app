@@ -41,8 +41,6 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: "nginx"
 spec:
-  # tls:
-  # - secretName: tls-secret
   rules:
   - http:
       paths:
@@ -54,22 +52,3 @@ spec:
               port:
                 number: 8080
 
----
-
-# apiVersion: networking.k8s.io/v1
-# kind: Ingress
-# metadata:
-#   name: poc-ing
-#   annotations:
-#     kubernetes.io/ingress.class: "nginx"
-# spec:
-#   rules:
-#     - http:
-#         paths:
-#           - path: /
-#             pathType: Prefix
-#             backend:
-#               service:
-#                 name: guestbook
-#                 port:
-#                   number: 8080
