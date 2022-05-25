@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM golang
+FROM golang:1.10.0
 RUN go get github.com/codegangsta/negroni \
            github.com/gorilla/mux \
            github.com/xyproto/simpleredis
@@ -23,7 +23,7 @@ RUN CGO_ENABLED=0 GOOS=linux go build -o main .
 FROM scratch
 WORKDIR /app
 COPY --from=0 /app/main .
-COPY ./public/index.html public/index.html
+COPY public/index_v1.html public/index_v0.html
 COPY ./public/script.js public/script.js
 COPY ./public/style.css public/style.css
 CMD ["/app/main"]
