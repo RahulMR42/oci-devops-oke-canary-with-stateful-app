@@ -87,5 +87,5 @@ func main() {
 
 	n := negroni.Classic()
 	n.UseHandler(r)
-	n.Run(":8080")
+	n.Run(":3000")
 }

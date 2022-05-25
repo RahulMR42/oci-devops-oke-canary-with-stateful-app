@@ -27,4 +27,4 @@ COPY public/index_v0.html public/index_v0.html
 COPY ./public/script.js public/script.js
 COPY ./public/style.css public/style.css
 CMD ["/app/main"]
-EXPOSE 8080
+EXPOSE 3000
